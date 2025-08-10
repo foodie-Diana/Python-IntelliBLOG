@@ -1,0 +1,30 @@
+# Django Core
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+django-extensions==3.2.3
+
+# Database
+psycopg2-binary==2.9.7
+redis==4.6.0
+
+# Authentication & Security
+djangorestframework-simplejwt==5.3.0
+django-allauth==0.57.0
+
+# API Documentation
+drf-spectacular==0.26.5
+
+# Environment
+python-decouple==3.8
+python-dotenv==1.0.0
+
+# File Upload & Storage
+Pillow==10.0.1
+django-storages==1.14.2
+boto3==1.29.7
+
+# Utilities
+requests==2.31.0
+python-slugify==8.0.1
+pytz==2023.3
