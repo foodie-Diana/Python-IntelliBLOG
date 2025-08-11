@@ -147,7 +147,7 @@ export default function Home() {
               <div className="text-center">
                 <div className="relative w-20 h-20 mx-auto mb-4">
             <Image
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    src="https://images.unsplash.com/photo-1753462281845-9811e0e3b1cc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D"
                     alt="头像"
                     fill
                     className="rounded-full object-cover"
