@@ -36,166 +36,334 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      {/* 导航栏 */}
-      <nav className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+    <div className="min-h-screen bg-gray-50">
+      {/* 顶部导航栏 */}
+      <nav className="bg-white shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                IntelliBlog
-              </h1>
+              <div className="text-blue-600 mr-4">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z"/>
+                </svg>
+              </div>
             </div>
-            <div className="flex space-x-4">
-              <a href="https://github.com/foodie-Diana" 
-                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                 target="_blank" 
-                 rel="noopener noreferrer">
-                GitHub
-              </a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-                AI聊天
-              </a>
+            <div className="flex space-x-8 text-gray-600">
+              <a href="#" className="hover:text-gray-900 transition-colors">首页</a>
+              <a href="#" className="hover:text-gray-900 transition-colors">说说</a>
+              <a href="#" className="hover:text-gray-900 transition-colors">关于</a>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* 主内容区 */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero区域 */}
-        <div className="text-center mb-16">
-          <div className="mb-8">
-            <Image
-              className="mx-auto rounded-full"
-              src="/next.svg"
-              alt="头像"
-              width={120}
-              height={120}
-              priority
-            />
-          </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            欢迎来到我的博客
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            分享技术、思考和生活
-          </p>
+      {/* 主要内容区域 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           
-          {/* API状态显示 */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 max-w-md mx-auto">
-            <h3 className="text-lg font-semibold mb-4">系统状态</h3>
-            {loading ? (
-              <div className="flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                <span className="ml-2">检测中...</span>
+          {/* 左侧主内容区 */}
+          <div className="flex-1 lg:w-2/3">
+            
+            {/* Hero横幅 */}
+            <div className="relative h-80 mb-8 rounded-lg overflow-hidden shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600">
+                <Image
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Hero背景"
+                  fill
+                  className="object-cover mix-blend-overlay"
+                />
               </div>
-            ) : (
-              <div>
-                <div className={`flex items-center mb-2 ${
-                  apiStatus?.status === 'success' ? 'text-green-600' : 'text-red-600'
-                }`}>
-                  <div className={`w-3 h-3 rounded-full mr-2 ${
-                    apiStatus?.status === 'success' ? 'bg-green-500' : 'bg-red-500'
-                  }`}></div>
-                  <span className="font-medium">
-                    {apiStatus?.status === 'success' ? '后端连接正常' : '后端连接失败'}
-                  </span>
+              <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+              <div className="absolute bottom-8 left-8 text-white">
+                <h1 className="text-4xl font-bold mb-2">
+                  AI智能博客平台开发的高级玩法
+                </h1>
+                <p className="text-lg opacity-90">
+                  探索现代Web开发技术栈，包括Django + Next.js全栈开发，以及云端部署的最佳实践...
+                </p>
+                <div className="flex items-center mt-4 text-sm opacity-80">
+                  <span>智识分享</span>
+                  <span className="mx-2">·</span>
+                  <span>发表于</span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {apiStatus?.message}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-                  版本: {apiStatus?.version}
-                </p>
               </div>
-            )}
-          </div>
-        </div>
+            </div>
 
-        {/* 文章列表区域 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* 示例文章卡片 */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Django + Next.js 博客搭建记录
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                记录使用Django作为后端，Next.js作为前端搭建个人博客的完整过程...
-              </p>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-500">2024-12-19</span>
-                <a href="#" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                  阅读更多 →
-                </a>
+            {/* 最新文章分类 */}
+            <div className="mb-6">
+              <h2 className="text-xl font-bold text-gray-800 mb-4">最新文章</h2>
+              <div className="flex space-x-4 mb-6">
+                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  开发
+                </button>
+                <button className="bg-purple-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  Nes
+                </button>
+                <button className="bg-pink-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  影评
+                </button>
+                <button className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  测试
+                </button>
               </div>
+            </div>
+
+            {/* 文章列表 */}
+            <div className="space-y-6">
+              {/* 文章卡片1 */}
+              <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="flex">
+                  <div className="w-48 h-32 flex-shrink-0">
+                    <Image
+                      src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="文章图片"
+                      width={192}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
+                      Immich 1.135升级报错PostgresError
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      在从1.134升级到1.135后，系统出现报错问题，先是在常规界面尝试了一些的，但是在检查后台时候，能看到是有错误...
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-gray-500">
+                      <span>2025-07-30</span>
+                      <div className="flex items-center space-x-4">
+                        <span>👁️ 5</span>
+                        <span>💬 0</span>
+                        <span>👍 0</span>
+                      </div>
+                      <span className="text-blue-500">Nes</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              {/* 文章卡片2 */}
+              <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="flex">
+                  <div className="w-48 h-32 flex-shrink-0">
+                    <Image
+                      src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="文章图片"
+                      width={192}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
+                      IPanel反向代理企业微信镜像知识点报错
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      proxy_set_header 设计一定要避开这个坑，host $proxy_host。这一内容已被版权方如果有相关的疑问...
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-gray-500">
+                      <span>2025</span>
+                      <div className="flex items-center space-x-4">
+                        <span>👁️ 8</span>
+                        <span>💬 0</span>
+                        <span>👍 0</span>
+                      </div>
+                      <span className="text-green-500">技术</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              {/* 文章卡片3 */}
+              <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="flex">
+                  <div className="w-48 h-32 flex-shrink-0">
+                    <Image
+                      src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="文章图片"
+                      width={192}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
+                      Django + Next.js 全栈博客开发实战
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      详细记录使用Python Django作为后端，Next.js + TypeScript作为前端，搭建现代化个人博客的完整过程...
+                    </p>
+                    <div className="flex items-center justify-between text-xs text-gray-500">
+                      <span>2024-12-19</span>
+                      <div className="flex items-center space-x-4">
+                        <span>👁️ 12</span>
+                        <span>💬 2</span>
+                        <span>👍 5</span>
+                      </div>
+                      <span className="text-blue-500">开发</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Python学习心得
+          {/* 右侧侧边栏 */}
+          <div className="lg:w-1/3 space-y-6">
+            
+            {/* 个人信息卡片 */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <div className="text-center">
+                <div className="relative w-20 h-20 mx-auto mb-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="头像"
+                    fill
+                    className="rounded-full object-cover"
+                  />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-1">IntelliBlog</h3>
+                <p className="text-sm text-gray-600 mb-4">一名热爱技术和生活的开发者</p>
+                
+                {/* 统计数据 */}
+                <div className="flex justify-around text-center border-t border-gray-100 pt-4">
+                  <div>
+                    <div className="text-xl font-bold text-gray-900">4</div>
+                    <div className="text-xs text-gray-500">分类数</div>
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold text-gray-900">54</div>
+                    <div className="text-xs text-gray-500">文章数</div>
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold text-gray-900">8</div>
+                    <div className="text-xs text-gray-500">标签数</div>
+                  </div>
+                </div>
+
+                {/* 社交链接 */}
+                <div className="flex justify-center space-x-4 mt-4">
+                  <a href="https://github.com/foodie-Diana" 
+                     className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition-colors">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                    </svg>
+                  </a>
+                  <a href="#" className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-colors">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 最新文章 */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
+                <span className="w-1 h-5 bg-blue-500 mr-2"></span>
+                最新文章
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                从C++转向Python的学习经验分享，包括语法差异、生态系统等...
-              </p>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-500">2024-12-18</span>
-                <a href="#" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                  阅读更多 →
+              <div className="space-y-3">
+                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                  Immich 1.135升级报错PostgresError
+                </a>
+                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                  IPanel反向代理企业微信镜像知识点...
+                </a>
+                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                  解决JSON.parse错误的strin...
+                </a>
+                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                  没有你想象的那么复杂的的反悔
+                </a>
+                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                  JetBrains系列开发工具激活
                 </a>
               </div>
             </div>
-          </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                云服务器部署指南
+            {/* 标签云 */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
+                <span className="w-1 h-5 bg-green-500 mr-2"></span>
+                标签云
+                <span className="ml-auto text-xs text-gray-500">更多 →</span>
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                详细介绍如何将Django + Next.js项目部署到腾讯云服务器...
-              </p>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-500">即将发布</span>
-                <a href="#" className="text-gray-400 text-sm font-medium">
-                  敬请期待
-                </a>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">React</span>
+                <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">前端</span>
+                <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">TypeScript</span>
+                <span className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full">SQL</span>
+                <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">CSS</span>
+                <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">算法</span>
+                <span className="px-3 py-1 bg-pink-100 text-pink-700 text-xs rounded-full">微服务</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">Golang</span>
+                <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Vue</span>
+                <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Javascript</span>
+                <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">前端</span>
+                <span className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full">Nes</span>
               </div>
+            </div>
+
+            {/* API状态显示 */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="font-semibold text-gray-900 mb-4">系统状态</h3>
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+                  <span className="ml-2 text-sm">检测中...</span>
+                </div>
+              ) : (
+                <div>
+                  <div className={`flex items-center mb-2 ${
+                    apiStatus?.status === 'success' ? 'text-green-600' : 'text-red-600'
+                  }`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${
+                      apiStatus?.status === 'success' ? 'bg-green-500' : 'bg-red-500'
+                    }`}></div>
+                    <span className="text-sm">
+                      {apiStatus?.status === 'success' ? '后端连接正常' : '后端连接失败'}
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {apiStatus?.message}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
-
-        {/* 链接区域 */}
-        <div className="mt-16 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            快速链接
-          </h2>
-          <div className="flex justify-center space-x-6">
-            <a href="https://github.com/foodie-Diana" 
-               className="flex items-center space-x-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
-               target="_blank" 
-               rel="noopener noreferrer">
-              <span>GitHub</span>
-            </a>
-            <a href="#" 
-               className="flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              <span>AI聊天助手</span>
-            </a>
-            <a href="#" 
-               className="flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
-              <span>联系我</span>
-            </a>
-          </div>
-        </div>
-      </main>
+      </div>
 
       {/* 页脚 */}
-      <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8">
+      <footer className="bg-white border-t border-gray-200 py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
+          <div className="flex justify-center space-x-6 mb-4">
+            <a href="#" className="text-gray-400 hover:text-gray-500">
+              <span className="sr-only">RSS</span>
+              📡 RSS
+            </a>
+            <a href="#" className="text-gray-400 hover:text-gray-500">
+              🔐 站点地图
+            </a>
+          </div>
+          <div className="flex justify-center space-x-2 mb-4">
+            <span className="bg-gray-800 text-white px-2 py-1 text-xs rounded">Power</span>
+            <span className="bg-pink-500 text-white px-2 py-1 text-xs rounded">Live</span>
+            <span className="bg-orange-500 text-white px-2 py-1 text-xs rounded">学生认证</span>
+            <span className="bg-blue-500 text-white px-2 py-1 text-xs rounded">实况监控</span>
+          </div>
+          <p className="text-gray-500 text-sm">
             © 2024 IntelliBlog. 使用 Django + Next.js 构建
           </p>
         </div>
