@@ -154,7 +154,7 @@ export default function Home() {
                   />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-1">Hansong Liu</h3>
-                <p className="text-sm text-gray-600 mb-4">一名热爱技术和生活的开发者</p>
+
                 
                 {/* 统计数据 */}
                 <div className="flex justify-around text-center border-t border-gray-100 pt-4">
