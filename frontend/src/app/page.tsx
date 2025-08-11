@@ -97,14 +97,8 @@ export default function Home() {
                 <button className="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
                   开发
                 </button>
-                <button className="bg-purple-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                  Nes
-                </button>
-                <button className="bg-pink-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                  影评
-                </button>
-                <button className="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                  测试
+                <button className="bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                  学习
                 </button>
               </div>
             </div>
@@ -112,70 +106,6 @@ export default function Home() {
             {/* 文章列表 */}
             <div className="space-y-6">
               {/* 文章卡片1 */}
-              <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="flex">
-                  <div className="w-48 h-32 flex-shrink-0">
-                    <Image
-                      src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                      alt="文章图片"
-                      width={192}
-                      height={128}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
-                      Immich 1.135升级报错PostgresError
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                      在从1.134升级到1.135后，系统出现报错问题，先是在常规界面尝试了一些的，但是在检查后台时候，能看到是有错误...
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-gray-500">
-                      <span>2025-07-30</span>
-                      <div className="flex items-center space-x-4">
-                        <span>👁️ 5</span>
-                        <span>💬 0</span>
-                        <span>👍 0</span>
-                      </div>
-                      <span className="text-blue-500">Nes</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              {/* 文章卡片2 */}
-              <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="flex">
-                  <div className="w-48 h-32 flex-shrink-0">
-                    <Image
-                      src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                      alt="文章图片"
-                      width={192}
-                      height={128}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex-1 p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
-                      IPanel反向代理企业微信镜像知识点报错
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                      proxy_set_header 设计一定要避开这个坑，host $proxy_host。这一内容已被版权方如果有相关的疑问...
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-gray-500">
-                      <span>2025</span>
-                      <div className="flex items-center space-x-4">
-                        <span>👁️ 8</span>
-                        <span>💬 0</span>
-                        <span>👍 0</span>
-                      </div>
-                      <span className="text-green-500">技术</span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              {/* 文章卡片3 */}
               <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="flex">
                   <div className="w-48 h-32 flex-shrink-0">
@@ -192,14 +122,14 @@ export default function Home() {
                       Django + Next.js 全栈博客开发实战
                     </h3>
                     <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                      详细记录使用Python Django作为后端，Next.js + TypeScript作为前端，搭建现代化个人博客的完整过程...
+                      详细记录使用Python Django作为后端，Next.js + TypeScript作为前端，搭建现代化个人博客的完整过程。从项目初始化、环境配置，到前后端开发、UI设计，再到云端部署，记录每一个关键步骤...
                     </p>
                     <div className="flex items-center justify-between text-xs text-gray-500">
                       <span>2024-12-19</span>
                       <div className="flex items-center space-x-4">
-                        <span>👁️ 12</span>
-                        <span>💬 2</span>
-                        <span>👍 5</span>
+                        <span>👁️ 1</span>
+                        <span>💬 0</span>
+                        <span>👍 0</span>
                       </div>
                       <span className="text-blue-500">开发</span>
                     </div>
@@ -216,28 +146,28 @@ export default function Home() {
             <div className="bg-white rounded-lg shadow-md p-6">
               <div className="text-center">
                 <div className="relative w-20 h-20 mx-auto mb-4">
-                  <Image
+            <Image
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                     alt="头像"
                     fill
                     className="rounded-full object-cover"
                   />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-1">IntelliBlog</h3>
+                <h3 className="font-semibold text-gray-900 mb-1">Hansong Liu</h3>
                 <p className="text-sm text-gray-600 mb-4">一名热爱技术和生活的开发者</p>
                 
                 {/* 统计数据 */}
                 <div className="flex justify-around text-center border-t border-gray-100 pt-4">
                   <div>
-                    <div className="text-xl font-bold text-gray-900">4</div>
+                    <div className="text-xl font-bold text-gray-900">2</div>
                     <div className="text-xs text-gray-500">分类数</div>
                   </div>
                   <div>
-                    <div className="text-xl font-bold text-gray-900">54</div>
+                    <div className="text-xl font-bold text-gray-900">1</div>
                     <div className="text-xs text-gray-500">文章数</div>
                   </div>
                   <div>
-                    <div className="text-xl font-bold text-gray-900">8</div>
+                    <div className="text-xl font-bold text-gray-900">3</div>
                     <div className="text-xs text-gray-500">标签数</div>
                   </div>
                 </div>
@@ -275,19 +205,7 @@ export default function Home() {
               </h3>
               <div className="space-y-3">
                 <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
-                  Immich 1.135升级报错PostgresError
-                </a>
-                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
-                  IPanel反向代理企业微信镜像知识点...
-                </a>
-                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
-                  解决JSON.parse错误的strin...
-                </a>
-                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
-                  没有你想象的那么复杂的的反悔
-                </a>
-                <a href="#" className="block text-sm text-gray-700 hover:text-blue-600 transition-colors">
-                  JetBrains系列开发工具激活
+                  Django + Next.js 全栈博客开发实战
                 </a>
               </div>
             </div>
@@ -300,18 +218,9 @@ export default function Home() {
                 <span className="ml-auto text-xs text-gray-500">更多 →</span>
               </h3>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">React</span>
-                <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">前端</span>
-                <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">TypeScript</span>
-                <span className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full">SQL</span>
-                <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">CSS</span>
-                <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">算法</span>
-                <span className="px-3 py-1 bg-pink-100 text-pink-700 text-xs rounded-full">微服务</span>
-                <span className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">Golang</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Vue</span>
-                <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Javascript</span>
-                <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">前端</span>
-                <span className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded-full">Nes</span>
+                <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Django</span>
+                <span className="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Python</span>
+                <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">Next.js</span>
               </div>
             </div>
 
@@ -364,7 +273,7 @@ export default function Home() {
             <span className="bg-blue-500 text-white px-2 py-1 text-xs rounded">实况监控</span>
           </div>
           <p className="text-gray-500 text-sm">
-            © 2024 IntelliBlog. 使用 Django + Next.js 构建
+            © 2024 Hansong Liu. 使用 Django + Next.js 构建
           </p>
         </div>
       </footer>
