@@ -50,7 +50,7 @@ export default function Home() {
             </div>
             <div className="flex space-x-8 text-gray-600">
               <a href="#" className="hover:text-gray-900 transition-colors">首页</a>
-              <a href="#" className="hover:text-gray-900 transition-colors">说说</a>
+              <a href="#" className="hover:text-gray-900 transition-colors">作者</a>
               <a href="#" className="hover:text-gray-900 transition-colors">关于</a>
             </div>
           </div>
@@ -77,15 +77,15 @@ export default function Home() {
               <div className="absolute inset-0 bg-black bg-opacity-30"></div>
               <div className="absolute bottom-8 left-8 text-white">
                 <h1 className="text-4xl font-bold mb-2">
-                  AI智能博客平台开发的高级玩法
+                  这里还不知道放啥
                 </h1>
                 <p className="text-lg opacity-90">
-                  探索现代Web开发技术栈，包括Django + Next.js全栈开发，以及云端部署的最佳实践...
+                  测试...
                 </p>
                 <div className="flex items-center mt-4 text-sm opacity-80">
-                  <span>智识分享</span>
+                  <span></span>
                   <span className="mx-2">·</span>
-                  <span>发表于</span>
+                  <span></span>
                 </div>
               </div>
             </div>
@@ -119,19 +119,19 @@ export default function Home() {
                   </div>
                   <div className="flex-1 p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 hover:text-blue-600 cursor-pointer">
-                      Django + Next.js 全栈博客开发实战
+                      Django + Next.js 全栈博客开发实战 测试文档
                     </h3>
                     <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                      详细记录使用Python Django作为后端，Next.js + TypeScript作为前端，搭建现代化个人博客的完整过程。从项目初始化、环境配置，到前后端开发、UI设计，再到云端部署，记录每一个关键步骤...
+                      测试文档，预览...
                     </p>
                     <div className="flex items-center justify-between text-xs text-gray-500">
-                      <span>2024-12-19</span>
+                      <span>2025-08-11</span>
                       <div className="flex items-center space-x-4">
-                        <span>👁️ 1</span>
-                        <span>💬 0</span>
-                        <span>👍 0</span>
+                        <span>👁️ 666</span>
+                        <span>💬 666</span>
+                        <span>👍 666</span>
                       </div>
-                      <span className="text-blue-500">开发</span>
+                      <span className="text-blue-500">标签</span>
                     </div>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ export default function Home() {
                 {/* 统计数据 */}
                 <div className="flex justify-around text-center border-t border-gray-100 pt-4">
                   <div>
-                    <div className="text-xl font-bold text-gray-900">2</div>
+                    <div className="text-xl font-bold text-gray-900">1</div>
                     <div className="text-xs text-gray-500">分类数</div>
                   </div>
                   <div>
@@ -182,11 +182,7 @@ export default function Home() {
                       <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"/>
                     </svg>
                   </a>
-                  <a href="#" className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white hover:bg-red-600 transition-colors">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                    </svg>
-                  </a>
+                  
                   <a href="#" className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-colors">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
@@ -266,14 +262,14 @@ export default function Home() {
               🔐 站点地图
             </a>
           </div>
-          <div className="flex justify-center space-x-2 mb-4">
+          {/* <div className="flex justify-center space-x-2 mb-4">
             <span className="bg-gray-800 text-white px-2 py-1 text-xs rounded">Power</span>
             <span className="bg-pink-500 text-white px-2 py-1 text-xs rounded">Live</span>
             <span className="bg-orange-500 text-white px-2 py-1 text-xs rounded">学生认证</span>
             <span className="bg-blue-500 text-white px-2 py-1 text-xs rounded">实况监控</span>
-          </div>
+          </div> */}
           <p className="text-gray-500 text-sm">
-            © 2024 Hansong Liu. 使用 Django + Next.js 构建
+            © 2025 Hansong Liu. 使用 Django + Next.js 构建
           </p>
         </div>
       </footer>
